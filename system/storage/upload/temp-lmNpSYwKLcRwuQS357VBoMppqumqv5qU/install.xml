@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+    <name><![CDATA[Full Width Page Content]]></name>
+	<version><![CDATA[2.1]]></version>
+	<code><![CDATA[reds-fluid-container]]></code>
+	<author><![CDATA[<font color="#F24545" size="5%">&#9441;&#9428;&#9427;&#9442;</font>]]></author>
+	<link><![CDATA[//www.agenciaprai.com]]></link>
+	<info><![CDATA[Substitui o container principal por fluid conatiner deixando o site com 100% da tela.]]></info>
+    
+    <file path="catalog/view/theme/default/template/*/*.tpl">
+        <operation info="add fluid container" error="skip">
+			<search position="replace"><![CDATA[class="container ]]></search>
+			<add><![CDATA[class="container-fluid ]]></add>
+		</operation>
+		<operation info="add fluid container" error="skip">
+			<search position="replace"><![CDATA[class="container"]]></search>
+			<add><![CDATA[class="container-fluid"]]></add>
+		</operation>
+	</file>
+</modification>
