@@ -7,11 +7,13 @@
                     <h4><span style="background-color:#229AC8;color:#ffffff"><?php echo "LIÊN HỆ VỚI CHÚNG TÔI" ?></span></h4>
                     <ul>
 						<li><span class="fa fa-map-marker" ><?php echo "&ensp;", $config_address; ?></span></li>
-						<li><span class="fa fa-phone" ><?php echo "&ensp;", "Hotline ", $config_telephone; ?></span></li>
+						<li><span class="fa fa-phone" ><?php echo "&ensp;", "Hotline1: ", "(86) 13 80 3116 041", " (Liu Shi Bin)"; ?></span></li>
+						<li><span class="fa fa-phone" ><?php echo "&ensp;", "Hotline2: ", "(84) 86 23 18826", " (Liu Shi Bin)"; ?></span></li>
+						<li><span class="fa fa-phone" ><?php echo "&ensp;", "Hotline3: ", $config_telephone, " (Ms Thảo)"; ?></span></li>
 						<li><span class="fa fa-envelope" ><?php echo "&ensp;", $config_email; ?></span></li>
-						<li><span class="fa fa-user" ><?php echo "&ensp;", "Người đại diên ", $config_owner; ?></span></li>
-						<li><span class="fa fa-files-o" ><?php echo "&ensp;", "MST: ", "0600336474" ?></span></li>
-						<li><span class="fa fa-files-o" ><?php echo "&ensp;", "Ngày cấp: ", "29/12/2004" ?></span></li>
+						<li><span class="fa fa-user" ><?php echo "&ensp;", "Người đại diên: ", $config_owner; ?></span></li>
+						<li><span class="fa fa-files-o" ><?php echo "&ensp;", "MST: ", "0601034998" ?></span></li>
+						<li><span class="fa fa-files-o" ><?php echo "&ensp;", "Ngày cấp: ", "23/04/2014" ?></span></li>
 						<li><span class="fa fa-files-o" ><?php echo "&ensp;", "Nơi cấp: ", "Sở KH & ĐT Tỉnh Nam Định" ?></span></li>
                     </ul>
                 </div>

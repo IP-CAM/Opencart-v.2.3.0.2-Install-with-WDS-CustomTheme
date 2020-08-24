@@ -44,13 +44,14 @@ class ControllerCommonContentTop extends Controller {
 		$data['modules'] = array();
 
 		$modules = $this->model_design_layout->getLayoutModules($layout_id, 'content_top');
-
+		
 		foreach ($modules as $module) {
+			if ($module['code'] == 'slideshow.27') continue;
 			$part = explode('.', $module['code']);
-
+			// $this->log->write($modules);
 			if (isset($part[0]) && $this->config->get($part[0] . '_status')) {
 				$module_data = $this->load->controller('extension/module/' . $part[0]);
-
+				// $this->log->write($module_data);
 				if ($module_data) {
 					$data['modules'][] = $module_data;
 				}
@@ -61,7 +62,7 @@ class ControllerCommonContentTop extends Controller {
 
 				if ($setting_info && $setting_info['status']) {
 					$output = $this->load->controller('extension/module/' . $part[0], $setting_info);
-
+					// $this->log->write($output);
 					if ($output) {
 						$data['modules'][] = $output;
 					}

@@ -35,6 +35,7 @@
     <script type="text/javascript" src="catalog/view/theme/wds/js/jquery.magnific-popup.min.js"></script>
     <script type="text/javascript" src="catalog/view/theme/wds/js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="catalog/view/theme/wds/js/jquery.jcarousel.min.js"></script>
+	
     <?php foreach ($styles as $style) { ?>
         <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>"
               media="<?php echo $style['media']; ?>"/>
@@ -136,11 +137,12 @@
                     <div class="row">
                         <div class="col-sm-7 hidden-xs">
                             <div id="welcome" style="display:inline-block;">
-									<?php echo "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;" ?>
+									<!-- <?php echo "&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;" ?> -->
+									<?php echo "&ensp;&ensp;&ensp;&ensp;" ?>
 									<span class="fa fa-clock-o"><?php echo "&ensp;", $config_open; ?></span>
-									<?php echo "&ensp;&ensp;&ensp;&ensp;" ?>
+									<?php echo "&ensp;&ensp;" ?>
 									<span class="fa fa-map-marker"><?php echo "&ensp;", $config_address; ?></span>
-									<?php echo "&ensp;&ensp;&ensp;&ensp;" ?>
+									<?php echo "&ensp;&ensp;" ?>
 									<span class="fa fa-phone"><?php echo "&ensp;","HOTLINE: ", $config_telephone; ?></span>
 							</div>
                         </div>
@@ -227,7 +229,7 @@
                                     <?php if ($category['children']) { ?>
 
                                         <li class="with-sub-menu hover"><p class="close-menu"></p>
-                                            <a href="<?php echo $category['href']; ?>"><span><strong><?php echo $category['name']; ?></strong></span></a>
+                                            <a href="<?php echo $category['href']; ?>"><span><strong><?php echo $category['name'], "&ensp;"; ?><i class="fa fa-angle-down"></i></strong></span></a>
                                             <div class="sub-menu" style="width: 220px">
                                                 <div class="content">
                                                     <div class="row hover-menu">

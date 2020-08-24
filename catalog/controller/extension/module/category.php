@@ -38,10 +38,10 @@ class ControllerExtensionModuleCategory extends Controller {
 		$new_data['child_id'] = $data['child_id'];
 		
 		$categories = $this->model_catalog_category->getCategories(0);
-
+		// $this->log->write($categories);
 		foreach ($categories as $category) {
 			$children_data = array();
-			if ($category['category_id'] != $this->config->get('config_subcategory_left')) continue;
+			// if ($category['category_id'] != $this->config->get('config_subcategory_left')) continue;
 			// if ($category['category_id'] == $data['category_id']) {
 				$children = $this->model_catalog_category->getCategories($category['category_id']);
 
@@ -53,13 +53,15 @@ class ControllerExtensionModuleCategory extends Controller {
 						'name' => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
 						'href' => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
 					);
-					
-					$new_data['categories'][] = array(
-						'category_id' => $child['category_id'],
-						'name' => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
-						'children'    => (array) null,
-						'href' => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
-					);
+					// $this->log->write($child);
+					if ($child['parent_id'] == $this->config->get('z_config_category_left')) {
+						$new_data['categories'][] = array(
+							'category_id' => $child['category_id'],
+							'name' => $child['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+							'children'    => (array) null,
+							'href' => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'])
+						);
+					}
 				// }
 			}
 

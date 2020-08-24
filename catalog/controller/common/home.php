@@ -13,6 +13,8 @@ class ControllerCommonHome extends Controller {
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
+		$data['content_slideshow'] = $this->load->controller('common/content_slideshow');
+		// $this->log->write($data['content_slideshow']);
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 		$data['config_telephone'] = $this->config->get('config_telephone');
